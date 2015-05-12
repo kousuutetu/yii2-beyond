@@ -113,10 +113,33 @@ AppAsset::register($this);
                 </div>
                 <!-- /Page Sidebar Header -->
                 <!-- Sidebar Menu -->
+                <?php
+                    $menuItems = [
+                        [
+                            'label' => 'Dashboard',
+                            'icon' => 'menu-icon glyphicon glyphicon-home',
+                            'url' => ['/site/index'],
+                        ],
+                        [
+                            'label' => 'About Me',
+                            'icon' => 'menu-icon fa fa-desktop',
+                            'items' => [
+                                [
+                                    'label' => 'About',
+                                    'url' => ['/site/aboutus'],
+                                ],
+                                [
+                                    'label' => 'Contact',
+                                    'url' => ['/site/contact'],
+                                ],
+                            ],
+                        ],
+                    ];
+                ?>
                 <?= Sidebar::widget([
                     'activateParents' => true,
                     'options' => ['class' => 'sidebar-menu'],
-                    'items' => Yii::$app->params['menuItems']
+                    'items' => $menuItems
                 ]) ?>
                 <!-- /Sidebar Menu -->
             </div>
