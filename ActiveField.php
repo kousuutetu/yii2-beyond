@@ -115,7 +115,7 @@ class ActiveField extends \yii\widgets\ActiveField
     /**
      * @var string the template for checkboxes in horizontal layout
      */
-    public $horizontalCheckboxTemplate = "{beginWrapper}\n<div class=\"checkbox\">\n{beginLabel}\n{input}\n{labelTitle}\n{endLabel}\n</div>\n{error}\n{endWrapper}\n{hint}";
+    public $horizontalCheckboxTemplate = "{beginWrapper}\n<div class=\"checkbox\">\n{beginLabel}\n{input}\n<span class=\"text\">{labelTitle}<span>\n{endLabel}\n</div>\n{error}\n{endWrapper}\n{hint}";
     /**
      * @var string the template for radio buttons in horizontal layout
      */
