@@ -26,5 +26,7 @@ Usage
 
 ```
 cp -r vendor/jeff/yii2-beyond/views backend/
-cp -r vendor/jeff/yii2-beyond/AppAssets.php backend/assets/
-sed -i 's/yii\\web\\ErrorAction/Jeff\\beyond\\ErrorAction/' backend/controllers/SiteController.php
+cp -r vendor/jeff/yii2-beyond/AppAsset.php backend/assets/
+vim backend/controllers/SiteController.php
+modify  yii\web\ErrorAction to Jeff\beyond\ErrorAction
+add $this->layout = 'nonav' to action login
