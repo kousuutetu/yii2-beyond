@@ -73,6 +73,9 @@ class Alert extends Widget
      * @var array the options for rendering the close button tag.
      */
     public $closeButton = [];
+    /**
+     * @var boolean the flashModel for rendering the alert list.
+     */
     public $flashModel  = false;
 
     /**
@@ -80,6 +83,8 @@ class Alert extends Widget
      */
     public function init()
     {
+        parent::init();
+
         if ($this->flashModel) {
             $session = \Yii::$app->getSession();
             $flashes = $session->getAllFlashes();
@@ -95,20 +100,22 @@ class Alert extends Widget
                         /* assign unique id to each alert box */
                         $this->options['id'] = $this->getId() . '-' . $type . '-' . $i;
 
-                        $this->body = $message;
+                        echo Alert::widget([
+                            'body' => $message,
+                            'closeButton' => $this->closeButton,
+                            'options' => $this->options,
+                        ]);
                     }
 
                     $session->removeFlash($type);
                 }
             }
+        } else {
+            $this->initOptions();
+
+            echo Html::beginTag('div', $this->options) . "\n";
+            echo $this->renderBodyBegin() . "\n";
         }
-
-        parent::init();
-
-        $this->initOptions();
-
-        echo Html::beginTag('div', $this->options) . "\n";
-        echo $this->renderBodyBegin() . "\n";
     }
 
     /**
@@ -116,10 +123,12 @@ class Alert extends Widget
      */
     public function run()
     {
-        echo "\n" . $this->renderBodyEnd();
-        echo "\n" . Html::endTag('div');
+        if (!($this->flashModel && !$this->body)) {
+            echo "\n" . $this->renderBodyEnd();
+            echo "\n" . Html::endTag('div');
 
-        $this->registerPlugin('alert');
+            $this->registerPlugin('alert');
+        }
     }
 
     /**

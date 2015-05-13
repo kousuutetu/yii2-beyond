@@ -176,6 +176,7 @@ AppAsset::register($this);
                 <!-- Page Body -->
                 <div class="page-body">
                     <!-- Your Content Goes Here -->
+                    <?php echo  Alert::widget(['flashModel' => true]) ?>
                     <?= $content ?>
                 </div>
                 <!-- /Page Body -->
