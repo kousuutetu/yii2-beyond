@@ -198,7 +198,6 @@ class ActiveField extends \yii\widgets\ActiveField
             }
             $this->labelOptions['class'] = null;
         }
-
         return parent::checkbox($options, false);
     }
 
@@ -243,9 +242,11 @@ class ActiveField extends \yii\widgets\ActiveField
             }
         }  elseif (!isset($options['item'])) {
             $options['item'] = function ($index, $label, $name, $checked, $value) {
+                $label = $this->form->layout === 'horizontal' ? '<span class="text">'.$label.'</span>' : $label;
                 return '<div class="checkbox">' . Html::checkbox($name, $checked, ['label' => $label, 'value' => $value]) . '</div>';
             };
         }
+
         parent::checkboxList($items, $options);
         return $this;
     }

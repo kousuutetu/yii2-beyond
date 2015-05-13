@@ -218,7 +218,7 @@ class SideBar extends Widget
             if ($route[0] !== '/' && Yii::$app->controller) {
                 $route = Yii::$app->controller->module->getUniqueId() . '/' . $route;
             }
-            if (ltrim($route, '/') !== $this->route && ltrim($route, '/').'/index' !== $this->route) {
+            if ((false === stripos($this->route, ltrim($route, '/'))) && (ltrim($route, '/') !== $this->route || ltrim($route, '/').'/index' !== $this->route)) {
                 return false;
             }
             unset($item['url']['#']);
