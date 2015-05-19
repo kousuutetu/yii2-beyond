@@ -141,7 +141,9 @@ class Nav extends Widget
             throw new InvalidConfigException("The 'label' option is required.");
         }
         $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
-        $label = Html::tag('span', $encodeLabel ? Html::encode($item['label']) : $item['label'], ['class' => 'menu-text']);
+        $label = Html::tag('span', 
+            $encodeLabel ? Html::encode(Yii::t('app', $item['label'])) : Yii::t('app', $item['label']), 
+            ['class' => 'menu-text']);
         $options = ArrayHelper::getValue($item, 'options', []);
         $items = ArrayHelper::getValue($item, 'items');
         $url = ArrayHelper::getValue($item, 'url', '#');
