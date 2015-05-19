@@ -2,7 +2,7 @@
 use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use Jeff\beyond\Sidebar;
+use Jeff\beyond\Nav;
 use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
@@ -136,7 +136,7 @@ AppAsset::register($this);
                         ],
                     ];
                 ?>
-                <?= Sidebar::widget([
+                <?= Nav::widget([
                     'activateParents' => true,
                     'options' => ['class' => 'sidebar-menu'],
                     'items' => $menuItems
