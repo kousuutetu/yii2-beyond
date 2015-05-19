@@ -8,33 +8,29 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * SideBar renders a sidebar HTML component.
+ * Nav renders a nav HTML component.
  *
  * For example:
  *
  * ```php
- * echo Sidebar::widget([
+ * echo Nav::widget([
  *     'items' => [
  *         [
- *             'label' => 'Home',
+ *             'label' => 'Dashboard',
  *             'url' => ['site/index'],
- *             'linkOptions' => [...],
  *         ],
  *         [
- *             'label' => 'Dropdown',
+ *             'label' => 'Authorization',
  *             'items' => [
- *                  ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
- *                  '<li class="divider"></li>',
- *                  '<li class="dropdown-header">Dropdown Header</li>',
- *                  ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
+ *                  ['label' => 'Permission', 'url' => '#'],
+ *                  ['label' => 'Role', 'url' => '#'],
  *             ],
  *         ],
  *     ],
- *     'options' => ['class' =>'nav-pills'], // set this to nav-tab to get tab-styled navigation
  * ]);
  * ```
  */
-class SideBar extends Widget
+class Nav extends Widget
 {
     /**
      * @var array list of items in the nav widget. Each array element represents a single
@@ -218,7 +214,14 @@ class SideBar extends Widget
             if ($route[0] !== '/' && Yii::$app->controller) {
                 $route = Yii::$app->controller->module->getUniqueId() . '/' . $route;
             }
-            if ((false === stripos($this->route, ltrim($route, '/'))) && (ltrim($route, '/') !== $this->route || ltrim($route, '/').'/index' !== $this->route)) {
+            if (
+                (
+                    (false === stripos($this->route, ltrim($route, '/'))) 
+                    || !(false === stripos($this->route, ltrim($route, '/').'-'))) 
+                && (
+                    ltrim($route, '/') !== $this->route 
+                    || ltrim($route, '/').'/index' !== $this->route)
+            ) {
                 return false;
             }
             unset($item['url']['#']);
