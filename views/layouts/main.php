@@ -3,6 +3,7 @@ use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use Jeff\beyond\Nav;
+use Jeff\beyond\Alert;
 use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
@@ -176,7 +177,7 @@ AppAsset::register($this);
                 <!-- Page Body -->
                 <div class="page-body">
                     <!-- Your Content Goes Here -->
-                    <?php echo  Alert::widget(['flashModel' => true]) ?>
+                    <?= Alert::widget(['flashModel' => true]) ?>
                     <?= $content ?>
                 </div>
                 <!-- /Page Body -->
