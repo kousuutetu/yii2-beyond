@@ -1,6 +1,6 @@
 <?php
 
-namespace Jeff\beyond;
+namespace maple\beyond;
 
 use yii\web\AssetBundle;
 

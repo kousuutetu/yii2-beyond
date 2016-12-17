@@ -1,6 +1,6 @@
 <?php
 
-namespace Jeff\beyond;
+namespace maple\beyond;
 
 use Yii;
 use yii\helpers\Html;
@@ -62,7 +62,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
      * @var string the default field class name when calling [[field()]] to create a new field.
      * @see fieldConfig
      */
-    public $fieldClass = 'Jeff\beyond\ActiveField';
+    public $fieldClass = 'maple\beyond\ActiveField';
     /**
      * @var array|\Closure the default configuration used by [[field()]] when creating a new field object.
      * This can be either a configuration array or an anonymous function returning a configuration array.

@@ -2,8 +2,8 @@
 use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use Jeff\beyond\Nav;
-use Jeff\beyond\Alert;
+use maple\beyond\Nav;
+use maple\beyond\Alert;
 use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
@@ -40,7 +40,7 @@ AppAsset::register($this);
                 <!-- Navbar Barnd -->
                 <div class="navbar-header pull-left">
                     <a href="<?= Yii::$app->homeUrl ?>" class="navbar-brand">
-                        Jeff Beyond
+                        Maple Beyond
                     </a>
                 </div>
                 <!-- /Navbar Barnd -->

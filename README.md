@@ -28,5 +28,5 @@ Usage
 cp -r vendor/jeff/yii2-beyond/views backend/
 cp -r vendor/jeff/yii2-beyond/AppAsset.php backend/assets/
 vim backend/controllers/SiteController.php
-modify  yii\web\ErrorAction to Jeff\beyond\ErrorAction
+modify  yii\web\ErrorAction to maple\beyond\ErrorAction
 add $this->layout = 'nonav' to action login
