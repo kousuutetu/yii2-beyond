@@ -1,5 +1,5 @@
 {
-    "name": "jeff/yii2-beyond",
+    "name": "maple/yii2-beyond",
     "description": "Yii2 Theme Beyond",
     "type": "yii2-extension",
     "keywords": ["yii2","extension"],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Jeff\\beyond\\": ""
+            "maple\\beyond\\": ""
         }
     }
 }
