@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class BeyondAsset extends AssetBundle
 {
-    public $sourcePath = "@vendor/jeff/yii2-beyond/assets";
+    public $sourcePath = "@vendor/maple/yii2-beyond/assets";
     public $css = [
     	// Basic Styles
         'css/bootstrap.min.css',
